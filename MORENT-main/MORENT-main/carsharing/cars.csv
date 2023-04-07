@@ -1,0 +1,54 @@
+Id,CarModel,Engine,BodyType,Capacity,Fuel,Transmission,
+3,Audi A6,45 TDI tiptronic quattro,Wagon,5,Diesel,Automatic,1
+4,Audi e-tron,55 quattro,Crossover,5,Electric,Automatic,2
+5,Audi Q3,35 TDI MT quattro,Crossover,5,Diesel,Manual,3
+6,Audi Q8,45 TDI Tiptronic quattro,Crossover,5,Diesel,Automatic,4
+9,BMW 2 Series Active Tourer,216d MT,Minivan,5,Diesel,Manual,5
+10,BMW 3 Series,318d MT,Sedan,5,Diesel,Manual,6
+11,BMW 7 Series,730d Steptronic,Sedan,4,Diesel,Automatic,7
+13,BMW M3,3.0 DCT,Sedan,5,Gasoline,robot,8
+14,BMW M8,4.4 Competition Steptronic xDrive,Cabriolet,4,Gasoline,Automatic,9
+15,BMW X1,sDrive16d MT,Crossover,5,Diesel,Manual,10
+16,BMW X3 M,3.0 Competition Steptronic xDrive,Crossover,5,Gasoline,Automatic,11
+17,BMW X4,M40d Steptronic,Crossover,5,Diesel,Automatic,12
+19,BMW X5,M50d Steptronic xDrive,Crossover,5,Diesel,Automatic,13
+20,BMW X6,M50d Steptronic xDrive,Crossover,5,Diesel,Automatic,14
+21,BMW X7,M50d Steptronic,Crossover,5,Diesel,Automatic,15
+22,BMW Z4,M40i Steptronic,Roadster,2,Gasoline,Automatic,16
+28,Citroen C4 Spacetourer,1.6 BlueHDi AT,Minivan,7,Diesel,Automatic,17
+31,Ferrari F8 Tributo,3.9 AMT,Coupe,2,Gasoline,robot,18
+46,Hyundai Tucson,1.6 T-GDI AMT,Crossover,5,Gasoline,robot,19
+47,Jaguar I-Pace,EV400,Crossover,5,Electric,Continuously variable transmission (CVT),20
+48,Jaguar XF,D180 AT,Sedan,5,Diesel,Automatic,21
+49,Jeep Cherokee,2.0 AT,Crossover,5,Gasoline,Automatic,22
+51,Kia EV6,1.6 Gamma AT,Sedan,5,Gasoline,Automatic,23
+53,Kia Carens,2.0 AT,Sedan,5,Gasoline,Automatic,24
+57,Land Rover Discovery Sport,2.0 D150 AT AWD,Crossover,5,Diesel,Automatic,25
+58,Land Rover Range Rover Evoque,D150 AT AWD,Crossover,5,Diesel,Automatic,26
+59,Lexus ES,200 AT,Sedan,5,Gasoline,Automatic,27
+60,Lexus LS,2.5 Hybrid CVT,Minivan,4,Hybrid,Continuously variable transmission (CVT),28
+66,Mercedes-Benz A-Class,A 35 SpeedShift 4Matic,Hatchback,5,Gasoline,robot,29
+68,Mercedes-Benz C-Class,C 43 9G-TRONIC 4MATIC,Cabriolet,4,Gasoline,Automatic,30
+70,Mercedes-Benz EQC,80 kWh,Crossover,5,Electric,Automatic,31
+71,Mercedes-Benz G-Class,G 63 AMG Speedshift 4Matic,Crossover,5,Gasoline,Automatic,32
+72,Mercedes-Benz GLC-Class,63 AMG 9G-TRONIC 4MATIC+,Crossover,5,Gasoline,Automatic,33
+73,Mercedes-Benz GLE-Class,53 Speedshift TCT 9G 4Matic+,Crossover,5,Gasoline,Automatic,34
+74,Mercedes-Benz GLS-Class,350d 9G-Tronic 4Matic,Crossover,6,Diesel,Automatic,35
+75,Mini Cabrio,2.0 AMT,Cabriolet,4,Gasoline,robot,36
+76,Mini Cooper S,2.0 AMT,Hatchback,4,Gasoline,robot,37
+79,Nissan Kicks,1.2 DIG-T MT,Crossover,5,Gasoline,Manual,38
+80,Porsche 911,4S 3.0 PDK,Cabriolet,4,Gasoline,robot,39
+81,Porsche Cayenne,2.0 PDK AWD,Crossover,5,Gasoline,robot,40
+84,Renault Kiger,1.7 dCi X-Tronic,Crossover,5,Diesel,Continuously variable transmission (CVT),41
+85,Renault Kwid,1.6 AT,Sedan,5,Gasoline,Automatic,42
+88,Rolls-Royce Cullinan,6.7 AT AWD,Crossover,5,Gasoline,Automatic,43
+89,Skoda Slavia,1.0 MPI MT,Wagon,5,Gasoline,Manual,44
+90,Skoda Kamiq,1.0 TSI DSG,Crossover,5,Gasoline,robot,45
+93,Toyota Camri,2.5 TSI,Hatchback,5,Gasoline,Continuously variable transmission (CVT),46
+94,Toyota Urban Cruiser Hyryder,2.5 AT,Crossover,5,Gasoline,Automatic,47
+96,Volkswagen Virtus,1.4 TSI AT,Sedan,5,Gasoline,Automatic,48
+97,Volkswagen Tiguan,1.6 TDI DSG,Wagon,5,Diesel,robot,49
+99,Volkswagen Taigun,2.0 TSI Tiptronic 4Motion,Crossover,5,Gasoline,Automatic,50
+100,Volvo S60,2.0 T4 Geartronic,Sedan,5,Gasoline,Automatic,51
+101,Volvo XC60,2.0 D3 AT,Wagon,5,Diesel,Automatic,52
+102,Volvo XC90,2.0 D5 Drive-E AT AWD,Crossover,5,Diesel,Automatic,53

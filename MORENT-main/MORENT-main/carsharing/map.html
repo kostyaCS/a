@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c0635c31c9097fb08e27a1df289e6658 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c0635c31c9097fb08e27a1df289e6658" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c0635c31c9097fb08e27a1df289e6658 = L.map(
+                "map_c0635c31c9097fb08e27a1df289e6658",
+                {
+                    center: [49.839683, 24.029717],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c392f538c42b4a3d77b9739a3d187b88 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c0635c31c9097fb08e27a1df289e6658);
+        
+    
+            var marker_70356c67e0ae83451394bd637a6a6f04 = L.marker(
+                [49.839683, 24.029717],
+                {}
+            ).addTo(map_c0635c31c9097fb08e27a1df289e6658);
+        
+    
+            var icon_f2534060a1721ef6401d199b080c711c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "popup": "\u0422\u0430\u0440\u0430\u0441\u0430 \u0428\u0435\u0432\u0447\u0435\u043d\u043a\u0430 \u041b\u044c\u0432\u0456\u0432", "prefix": "glyphicon"}
+            );
+            marker_70356c67e0ae83451394bd637a6a6f04.setIcon(icon_f2534060a1721ef6401d199b080c711c);
+        
+    
+            var marker_41ddbd59dc9d34c00e025939ce5c7aec = L.marker(
+                [49.8194336, 23.9633617],
+                {}
+            ).addTo(map_c0635c31c9097fb08e27a1df289e6658);
+        
+    
+            var icon_fca39a1972fbb52335aa0ef9606354d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "car", "iconColor": "white", "markerColor": "lightgray", "popup": "Liubinska St 160 Lviv Lviv Oblast 79000 \u041b\u044c\u0432\u0456\u0432", "prefix": "fa"}
+            );
+            marker_41ddbd59dc9d34c00e025939ce5c7aec.setIcon(icon_fca39a1972fbb52335aa0ef9606354d6);
+        
+    
+            var poly_line_cb7a3ba9b1464eff4aeb9dcd8a1790ff = L.polyline(
+                [[49.8397, 24.02973], [49.83978, 24.02946], [49.83973, 24.02951], [49.83966, 24.02953], [49.83958, 24.02948], [49.83954, 24.02939], [49.83951, 24.02922], [49.83951, 24.02899], [49.83948, 24.02892], [49.8392, 24.02804], [49.83904, 24.02757], [49.83891, 24.02727], [49.83728, 24.02465], [49.83705, 24.02428], [49.83609, 24.02264], [49.8356, 24.02186], [49.83531, 24.02147], [49.83481, 24.02068], [49.83463, 24.02034], [49.83457, 24.02018], [49.83457, 24.0198], [49.83461, 24.0194], [49.83467, 24.01892], [49.8347, 24.01816], [49.83469, 24.01769], [49.83469, 24.01676], [49.83466, 24.01562], [49.83465, 24.01416], [49.83466, 24.01128], [49.83473, 24.00967], [49.83477, 24.00843], [49.83482, 24.00721], [49.83485, 24.00705], [49.83508, 24.00633], [49.83533, 24.00563], [49.83543, 24.00537], [49.83535, 24.00516], [49.83421, 24.00301], [49.83377, 24.0022], [49.83354, 24.00178], [49.83251, 23.9999], [49.83108, 23.9968], [49.83091, 23.99638], [49.83028, 23.99502], [49.82981, 23.99398], [49.82955, 23.99339], [49.82935, 23.99301], [49.82893, 23.99208], [49.82867, 23.99155], [49.82882, 23.99019], [49.82923, 23.98783], [49.82927, 23.98764], [49.82856, 23.98615], [49.82816, 23.98533], [49.82781, 23.9844], [49.8275, 23.98359], [49.82735, 23.98331], [49.82709, 23.98277], [49.8269, 23.98244], [49.82655, 23.98184], [49.82625, 23.98134], [49.82602, 23.98091], [49.82473, 23.97854], [49.82425, 23.97764], [49.82391, 23.97695], [49.82287, 23.97477], [49.82246, 23.97387], [49.82221, 23.97326], [49.82169, 23.97191], [49.82066, 23.96897], [49.82017, 23.96755], [49.81898, 23.96414], [49.81956, 23.96374], [49.81969, 23.96351], [49.81972, 23.96342], [49.81987, 23.96239], [49.81943, 23.96231], [49.81927, 23.96226], [49.81925, 23.9624], [49.81924, 23.96257], [49.81933, 23.96259], [49.81936, 23.96264], [49.81936, 23.96273], [49.81934, 23.96292], [49.81933, 23.96296]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_c0635c31c9097fb08e27a1df289e6658);
+        
+</script>
+</html>

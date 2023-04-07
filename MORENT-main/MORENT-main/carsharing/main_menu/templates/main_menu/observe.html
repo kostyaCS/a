@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morent</title>
+    <link rel="icon" href="{% static 'img/Logo.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/669671818b.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/_reset.scss">
+</head>
+<body>
+<div class="main">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner-position">
+                <div class="header__inner">
+                    <div class="header__inner-content">
+                        <div class="header__content-logo" style="display: block; margin: 0 auto; padding-top: 20px">
+                            <a href="{% url 'main' %}" class="header__content-logo--link">
+                                M O R E N T
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sports">
+        <div class="container">
+            <div class="sports__inner" style="justify-content: space-evenly;">
+                <div class="sports__inner-images">
+                    <div class="sports__inner-start--img" style="padding: 40px; border: 3px solid #B4BCBD; border-bottom-left-radius: 15px; border-top-right-radius: 15px;">
+                        <img src="{{car.Photo.url}}" alt="images" class="sports__inner-start--images">
+                    </div>
+                </div>
+                <div class="sports__inner-content" style="border: 2px solid #B4BCBD;">
+                    <div class="sports__inner-content--title---2">
+                        {{ car.CarModel }}
+                    </div>
+                    <div class="sports__inner-content--text---2">
+                        {{car.CarModel }} provides a reliable and efficient mode of transportation for individuals seeking convenience and mobility.
+                    </div>
+                    <ul class="sports__inner-content--list">
+                        <div class="sports__inner-content--list---item----1">
+                            <li class="sports__inner-content--list---item">
+                                Type Car
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                                Sport
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                                Capacity
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                               {{ car.Capacity }}
+                            </li>
+                        </div>
+                        <div class="sports__inner-content--list---item----2">
+                            <li class="sports__inner-content--list---item">
+                                BodyType
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                                {{ car.BodyType }}
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                                Fuel
+                            </li>
+                            <li class="sports__inner-content--list---item">
+                                {{ car.Fuel }}
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="sports__inner-content--bottom">
+                        <div class="sports__inner-bottom--price">
+                            $100/ <span>day</span>
+                        </div>
+                        <form action="" method="POST" style="width: 150px;"> {% csrf_token %}
+                            <button type='submit' name="rent_now" class="sports__inner-content--button">
+                                Rent Now
+                            </button>
+                        </form>
+                    </div>
+                    <p class="sports__inner-content--location" style="font-size: 20px; font-weight: 900; padding-top: 30px; text-align: center;">
+                        Location: <span style="font-weight: 400;">{{ car.Address.Address }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews__inner">
+                <div class="reviews__inner-top">
+                    <div class="reviews__inner-title">
+                        Reviews
+                    </div>
+                    <div class="reviews__inner-number">
+                        13
+                    </div>
+                </div>
+                <ul class="reviews__inner-items">
+                    <div class="reviews__inner-item--first">
+                        <li class="reviews__inner-item">
+                            <div class="reviews__inner-item--userinfo">
+                                <img src="{% static 'img/reviews/01.png' %}" alt="images" class="reviews__inner-item--userinfo---img">
+                                <div class="reviews__inner-item--userinfo---small">
+                                    <div class="reviews__inner-item--userinfo---small----title">
+                                        Alex Stanton
+                                    </div>
+                                    <div class="reviews__inner-item--userinfo---small----subtitle">
+                                        CEO at Bukalapak
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__inner-item--result">
+                                <div class="reviews__inner-item--result---data">
+                                    21 July 2022
+                        </li>
+                        <div class="reviews__inner-item--first---text">
+                            We are very happy with the service from the MORENT App. Morent has a low price and also a large variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.
+                        </div>
+                    </div>
+                    <div class="reviews__inner-item--first">
+                        <li class="reviews__inner-item">
+                            <div class="reviews__inner-item--userinfo">
+                                <img src="{% static 'img/reviews/02.png' %}" alt="images" class="reviews__inner-item--userinfo---img">
+                                <div class="reviews__inner-item--userinfo---small">
+                                    <div class="reviews__inner-item--userinfo---small----title">
+                                        Skylar Dias
+                                    </div>
+                                    <div class="reviews__inner-item--userinfo---small----subtitle">
+                                        CEO at Amazon
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__inner-item--result">
+                                <div class="reviews__inner-item--result---data">
+                                    20 July 2022
+                                </div>
+
+                            </div>
+                        </li>
+                        <div class="reviews__inner-item--first---text">
+                            We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite.
+                        </div>
+                    </div>
+                    <button class="reviews__inner-items--button">
+                        Show All
+                    </button>
+                </ul>
+            </div>
+        </div>
+    </section>

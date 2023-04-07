@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6be65414829d7a9a058c8bc5fa7418a4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6be65414829d7a9a058c8bc5fa7418a4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6be65414829d7a9a058c8bc5fa7418a4 = L.map(
+                "map_6be65414829d7a9a058c8bc5fa7418a4",
+                {
+                    center: [49.8661961, 24.0349729],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_843651ba31c7b2e2ac1b604293dac77d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6be65414829d7a9a058c8bc5fa7418a4);
+        
+    
+            var marker_91223ee51d8e2790b979ae1883a7a0c9 = L.marker(
+                [49.8661961, 24.0349729],
+                {}
+            ).addTo(map_6be65414829d7a9a058c8bc5fa7418a4);
+        
+    
+            var icon_820da4da23ca198c892fd37cc69d2bce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "lightgray", "popup": "Avraama Linkol\u0027na Street, Lviv, Lviv Oblast, 79000", "prefix": "glyphicon"}
+            );
+            marker_91223ee51d8e2790b979ae1883a7a0c9.setIcon(icon_820da4da23ca198c892fd37cc69d2bce);
+        
+    
+            var marker_bb4742829c1b4c9cea534775b16387ea = L.marker(
+                [49.8373105, 23.9977934],
+                {}
+            ).addTo(map_6be65414829d7a9a058c8bc5fa7418a4);
+        
+    
+            var icon_ee5ec77635ed6d66162808c3737384a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "car", "iconColor": "white", "markerColor": "lightgray", "popup": "Chernivetska St, 11\u0410, Lviv, Lviv Oblast, 79000", "prefix": "fa"}
+            );
+            marker_bb4742829c1b4c9cea534775b16387ea.setIcon(icon_ee5ec77635ed6d66162808c3737384a3);
+        
+    
+            var poly_line_8937f34e5d9d16f625114115ca79e99c = L.polyline(
+                [[49.8662, 24.03497], [49.86612, 24.03393], [49.86603, 24.03341], [49.86575, 24.03353], [49.86543, 24.03366], [49.8653, 24.03367], [49.86526, 24.03366], [49.8652, 24.03357], [49.86513, 24.0335], [49.86442, 24.03332], [49.86438, 24.03331], [49.86431, 24.03325], [49.86421, 24.03317], [49.8641, 24.03312], [49.86391, 24.03307], [49.86384, 24.03315], [49.86373, 24.03312], [49.8636, 24.0332], [49.86352, 24.03326], [49.8631, 24.03196], [49.86238, 24.02983], [49.86198, 24.02901], [49.86187, 24.02885], [49.86151, 24.02844], [49.86077, 24.02766], [49.86049, 24.02736], [49.86009, 24.02683], [49.85966, 24.02694], [49.85921, 24.02699], [49.85865, 24.02709], [49.85832, 24.02714], [49.85798, 24.02727], [49.85746, 24.02752], [49.85674, 24.02786], [49.85626, 24.0281], [49.85577, 24.02826], [49.85553, 24.02828], [49.85501, 24.02825], [49.85447, 24.0282], [49.85363, 24.02819], [49.8535, 24.02822], [49.85345, 24.02824], [49.85332, 24.02818], [49.85312, 24.02805], [49.85153, 24.02714], [49.85095, 24.02681], [49.85083, 24.02676], [49.85064, 24.02675], [49.85052, 24.02676], [49.85041, 24.02679], [49.84927, 24.02725], [49.84878, 24.02747], [49.84877, 24.02736], [49.84849, 24.02585], [49.84847, 24.02586], [49.84833, 24.02585], [49.84783, 24.0258], [49.84785, 24.02565], [49.84762, 24.02561], [49.84635, 24.02539], [49.84558, 24.02526], [49.84534, 24.02529], [49.8451, 24.02535], [49.84442, 24.02554], [49.84434, 24.02518], [49.84421, 24.0247], [49.84414, 24.02456], [49.84394, 24.02418], [49.84366, 24.02372], [49.84339, 24.0232], [49.84332, 24.02306], [49.84324, 24.0229], [49.84323, 24.02278], [49.84317, 24.0227], [49.84296, 24.02094], [49.84268, 24.0187], [49.84264, 24.0184], [49.84256, 24.0181], [49.84245, 24.01777], [49.84201, 24.01672], [49.84162, 24.01571], [49.84012, 24.01194], [49.83905, 24.00917], [49.8379, 24.00627], [49.83715, 24.00402], [49.8368, 24.00271], [49.83666, 24.00205], [49.83667, 24.0019], [49.8367, 24.00184], [49.83677, 24.00177], [49.83682, 24.00175], [49.8369, 24.00175], [49.83698, 24.00163], [49.83705, 24.00145], [49.83748, 24.00027], [49.83756, 24.00011], [49.83788, 23.99922], [49.83781, 23.99915], [49.83776, 23.99908], [49.83773, 23.99899], [49.83749, 23.99771]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_6be65414829d7a9a058c8bc5fa7418a4);
+        
+</script>
+</html>

@@ -1,0 +1,509 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morent</title>
+  <link rel="icon" href="{% static 'img/Logo.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://kit.fontawesome.com/669671818b.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    .cars__inner-item--1:before {
+      content: '';
+      position: absolute;
+      background-image: url("{% static 'img/cars/03.png' %}");
+      background-repeat: no-repeat;
+      width: 410px;
+      height: 120px;
+      z-index: 10;
+      bottom: 10px;
+      right: 20px;
+    }
+    .cars__inner-item--2:before {
+      content: '';
+      position: absolute;
+      background-image: url("{% static 'img/cars/04.png' %}");
+      background-repeat: no-repeat;
+      width: 410px;
+      height: 120px;
+      z-index: 10;
+      bottom: 10px;
+      right: 20px;
+    }
+    .recommendation__inner-item {
+      height: 450px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner-position">
+        <div class="header__inner">
+          <div class="header__inner-content">
+            <div class="header__content-logo animate__animated animate__fadeInDownBig animate__delay-1s animate__fast">
+              <a href="#" class="header__content-logo--link">
+                M O R E N T
+              </a>
+            </div>
+            <ul class="header__inner-content--list">
+              <form action="" method="POST" class="header__inner-list--item---formin">
+                {% csrf_token %}
+                <li class="header__inner-list--item animate__animated animate__bounceIn animate__slow">
+                  <a href="#" class="header__inner-item--link">
+                    {% if not is_authorized %}
+                      <button type="submit" name ='login' class="header__inner-item--button animate__animated animate__fadeInDownBig animate__fast">
+                        LOG IN
+                      </button>
+                    {% else %}
+                      <button style="visibility: hidden;" type="submit" name ='login' class="header__inner-item--button animate__animated animate__fadeInDownBig animate__fast">
+                        LOG IN
+                      </button>
+                    {% endif %}
+                    </a>
+                    </li>
+              </form>
+              <form action="" method="POST" class="header__inner-list--item---formon">
+                {% csrf_token %}
+                <li class="header__inner-list--item animate__animated animate__bounceIn animate__slow">
+                  <a href="#" class="header__inner-item--link">
+                    {% if not is_authorized %}
+                      <button name="register" type='submit' class="header__inner-item--button animate__animated animate__fadeInDownBig animate__fast">
+                        REGISTER
+                      </button>
+                    {% else %}
+                      <button style="visibility: hidden;" name="register" class="header__inner-item--button animate__animated animate__fadeInDownBig animate__fast">
+                        REGISTER
+                      </button>
+                    {% endif %}
+                    </a>
+                    </li>
+              </form>
+              {% if is_authorized %}
+              <form action="" method="GET, POST" class="header__inner-list--item---`">
+                  <a style="background-color: #3563E9;" href="{% url 'profile' %}" class="header__inner-preview--link animate__animated animate__fadeInDownBig animate__fast">
+                    <i style="color: white;" class="fa-solid fa-user"></i>
+                  </a>
+              </form>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="cars">
+    <div class="container">
+      <div class="cars__inner">
+        <div class="cars__inner-items">
+          <div class="cars__inner-item cars__inner-item--1 animate__animated animate__slideInLeft">
+            <div class="cars__inner-item--img">
+              <img src="{% static 'img/cars/01.jpg' %}" alt="images" class="cars__inner-item--images">
+            </div>
+            <div class="cars__inner-item--content">
+              <div class="cars__inner-item--title">
+                The Best Platform for Car Rental
+              </div>
+              <div class="cars__inner-item--text">
+                Ease of doing a car rental safely and reliably. Of course at a low price.
+              </div>
+              <form action="" method="GET, POST">
+                <a href="Koenigsegg.html">
+                  <button class="cars__inner-item--button">
+                    Rental Car
+                  </button>
+                </a>
+              </form>
+            </div>
+          </div>
+          <div class="cars__inner-item cars__inner-item--2 animate__animated animate__slideInRight">
+            <div class="cars__inner-item--img animate__lightSpeedInLeft">
+              <img src="{% static 'img/cars/02.jpg' %}" alt="images" class="cars__inner-item--images">
+            </div>
+            <div class="cars__inner-item--content">
+              <div class="cars__inner-item--title">
+                Easy way to rent a car at a low price
+              </div>
+              <div class="cars__inner-item--text">
+                Providing cheap car rental services and safe and comfortable facilities.
+              </div>
+              <form action="" method="GET, POST">
+                <a href="Nissan_GT_%20R.html">
+                  <button class="cars__inner-item--button">
+                    Rental Car
+                  </button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info">
+    <div class="container">
+      <div class="info__inner">
+        <div style="display: flex; gap: 50px; align-items: start;" class="info__inner-items">
+          <div class="info__inner-item animate__animated animate__lightSpeedInLeft animate__slower">
+            <div class="info__inner-item--check">
+              <div class="info__inner-item--check---title">
+                Pick - Up
+              </div>
+              <form autocomplete="off" method="POST">
+                {% csrf_token %}
+                <div>
+                  <input name="adress_pick_up1" type="text" id="input_1" placeholder="Type a street..." />
+                  <button style="display: block; margin: 20px auto 0; padding: 10px 20px; border: 2px solid blue; border-bottom-left-radius: 10px; border-top-right-radius: 10px; cursor: pointer; background-color: transparent;" type="submit" name="search">Search</button>
+                </div>
+                <ul class="list"></ul>
+              </form>
+            </div>
+          </div>
+          <div class="info__inner-item animate__animated animate__lightSpeedInRight animate__slower">
+            <div class="info__inner-item--check">
+              <div class="info__inner-item--check---title">
+                Drop - Off
+              </div>
+              <form autocomplete="off" class="forms_inner" method="POST">
+                {% csrf_token %}
+                <div>
+                  <input type="text" name="4" id="input_2" placeholder="Type a street..." />
+                  <button style="display: block; margin: 20px auto 0; padding: 10px 20px; border: 2px solid blue; border-bottom-left-radius: 10px; border-top-right-radius: 10px; cursor: pointer; background-color: transparent;" type="submit" name="search2">Search</button>
+                </div>
+                <ul class="list_1"></ul>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% if not is_search1_started %}
+    <section class="popular">
+      <div class="container">
+        <div class="popular__inner">
+          <div class="popular__inner-info">
+            <div class="popular__inner-info--title">
+              Popular Car
+            </div>
+            <form style="width: 100px;" method="POST">{% csrf_token %}
+              {% if not all_shown_popular %}
+                <button name="view_more" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View More
+                </button>
+              {% else %}
+                <button name="view_less" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View Less
+                </button>
+              {% endif %}
+            </form>
+          </div>
+          <div class="popular__inner-items" style="gap: 30px;">
+
+            {% for car in cars_popular %}
+
+              <div class="popular__inner-item recommendation__inner-item">
+                <div class="popular__item-titles">
+                  <div class="popular__item-title">
+                    {{car.CarModel}}
+                  </div>
+                  <!-- <div class="popular__item-love">
+                    <a href="#" class="popular__item-love--link">
+                      <img src="{% static 'img/popular/01.svg' %}" alt="img" class="popular__item-love--img">
+                    </a>
+                  </div> -->
+                </div>
+                <div class="popular__item-subtitle">
+                  Sport
+                </div>
+                <div class="popular__item-img">
+                  <img src="{{car.Photo.url}}" alt="images" class="popular__item-images">
+                </div>
+                <ul style="margin-top: 20px;" class="popular__list">
+                  <li class="popular__list-item">
+                    <img src="{% static 'img/popular/02.svg' %}" alt="images" class="popular__list-item--child---left">
+                    <div class="popular__list-item--text">
+                      90L
+                    </div>
+                  </li>
+                  <li class="popular__list-item">
+                    <img src="{% static 'img/popular/03.svg' %}" alt="images" class="popular__list-item--child---left">
+                    <div class="popular__list-item--text">
+                      {{car.BodyType}}
+                    </div>
+                  </li>
+                  <li class="popular__list-item">
+                    <img src="{% static 'img/popular/04.svg' %}" alt="images" class="popular__list-item--child---left">
+                    <div class="popular__list-item--text">
+                      {{car.Capacity}} People
+                    </div>
+                  </li>
+                </ul>
+                <div style="gap: 80px" class="popular__bottom">
+                  <div class="popular__bottom-price">
+                    $100.00/ <span>day</span>
+                  </div>
+                  <form action="" method="POST" class="form__cars"> {% csrf_token %}
+                    {% if not is_authorized%}
+                    <a href="{% url 'login' %}" class="popular__bottom-button">
+                      Rent Now
+                    </a>
+                    {% else %}
+                    <button type='submit' name='{{car.CarModel}}' class="popular__bottom-button">
+                      Rent Now
+                    </button> 
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="recommendation">
+      <div class="container">
+        <div class="recommendation__inner">
+          <div class="popular__inner-info">
+            <div class="popular__inner-info--title">
+              Recomended Cars
+            </div>
+            <form style="width: 100px;" method="POST">{% csrf_token %}
+              {% if not all_shown_recomended %}
+                <button name="view_more1" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View More
+                </button>
+              {% else %}
+                <button name="view_less2" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View Less
+                </button>
+              {% endif %}
+            </form>
+          </div>
+          
+          <div class="recommendation__inner-items">
+            {% for car in cars_recomended %}
+              <div class="popular__inner-item recommendation__inner-item">
+                <div class="popular__item-titles recommendation__item-titles">
+                  <div class="popular__item-title recommendation__item-title" style="font-size: 18px">
+                    {{car.CarModel}}
+                  </div>
+                  <!-- <div class="popular__item-love recommendation__item-love">
+                    <a href="#" class="popular__item-love--link recommendation__item-love--link">
+                      <img src="{% static 'img/popular/01.svg' %}" alt="img" class="popular__item-love--img recommendation__item-love--img">
+                    </a>
+                  </div> -->
+                </div>
+                <div class="popular__item-subtitle recommendation__item-subtitle">
+                  Sport
+                </div>
+                <div class="popular__item-img recommendation__item-img">
+                  <img src="{{car.Photo.url}}" alt="images" class="recommendation__item-images">
+                </div>
+                <ul style="margin-top: 30px;" class="recommendation__list popular__list">
+                  <li class="recommendation__list-item popular__list-item">
+                    <img src="{% static 'img/popular/02.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      90L
+                    </div>
+                  </li>
+                  <li class="popular__list-item recommendation__list-item">
+                    <img src="{% static 'img/popular/03.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      {{car.BodyType}}
+                    </div>
+                  </li>
+                  <li class="popular__list-item recommendation__list-item">
+                    <img src="{% static 'img/popular/04.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      {{car.Capacity}} People
+                    </div>
+                  </li>
+                </ul>
+                <div class="popular__bottom recommendation__bottom" style="gap: 80px; margin-top: 30px;">
+                  <div class="popular__bottom-price recommendation__bottom-price">
+                    $100.00/ <span>day</span>
+                  </div>
+                  <form action="" method="POST" class="form__cars">{% csrf_token %}
+                    {% if not is_authorized%}
+                    <a href="{% url 'login' %}" class="popular__bottom-button">
+                      Rent Now
+                    </a>
+                    {% else %}
+                    <button type='submit' name='{{car.CarModel}}' class="popular__bottom-button">
+                      Rent Now
+                    </button> 
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% else %}
+    <div class="main-street-block">Current Street: вул. {{current_street}}</div>
+    <section class="recommendation">
+      <div class="container">
+        <div class="recommendation__inner">
+          <div class="popular__inner-info">
+            <div class="popular__inner-info--title">
+              Closest Cars
+            </div>
+            <!-- <form style="width: 100px;" method="POST">{% csrf_token %}
+              {% if not all_shown_recomended %}
+                <button name="view_more1" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View More
+                </button>
+              {% else %}
+                <button name="view_less2" style="background-color: transparent !important; border: none;" href="#" class="popular__inner-info--link">
+                  View Less
+                </button>
+              {% endif %}
+            </form> -->
+          </div>
+          <style>
+            .main-street-block{
+              width: 100%;
+              text-align: center;
+              margin-bottom: 20px;
+              font-weight: bold;
+              font-size: 30px;
+            }
+            .green{
+              background-color: green;
+            }
+            .yellow{
+              background-color: orange;
+            }
+            .red{
+              background-color: red;
+            }
+          </style>
+          <div class="recommendation__inner-items">
+            {% for car_tuple in car_tuples %}
+              <div class="popular__inner-item recommendation__inner-item">
+                <div class="popular__item-titles recommendation__item-titles">
+                  <div class="popular__item-title recommendation__item-title" style="font-size: 18px">
+                    {{car_tuple.0.CarModel}}
+                  </div>
+                  <div style="font-family: Plus Jakatara Sans; width: 100%; font-weight: bold; font-size: 20px; display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+                    <div class="{{car_tuple.3}}" style="width: 100px; border-radius: 10px; text-align: center; color: white;">{{car_tuple.2}}km</div>
+                  </div>
+                  <!-- <div class="popular__item-love recommendation__item-love">
+                    <a href="#" class="popular__item-love--link recommendation__item-love--link">
+                      <img src="{% static 'img/popular/01.svg' %}" alt="img" class="popular__item-love--img recommendation__item-love--img">
+                    </a>
+                  </div> -->
+                </div>
+                <div class="popular__item-subtitle recommendation__item-subtitle">
+                  Sport
+                </div>
+                <div class="popular__item-img recommendation__item-img">
+                  <img src="{{car_tuple.1}}" alt="images" class="recommendation__item-images">
+                </div>
+                
+                <ul style="margin-top: 30px;" class="recommendation__list popular__list">
+                  <li class="recommendation__list-item popular__list-item">
+                    <img src="{% static 'img/popular/02.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      90L
+                    </div>
+                  </li>
+                  <li class="popular__list-item recommendation__list-item">
+                    <img src="{% static 'img/popular/03.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      {{car_tuple.0.BodyType}}
+                    </div>
+                  </li>
+                  <li class="popular__list-item recommendation__list-item">
+                    <img src="{% static 'img/popular/04.svg' %}" alt="images" class="popular__list-item--child---left recommendation__list-item--child---left">
+                    <div class="popular__list-item--text recommendation__list-item--text">
+                      {{car_tuple.0.Capacity}} People
+                    </div>
+                  </li>
+                </ul>
+                <div class="popular__bottom recommendation__bottom" style="gap: 80px; margin-top: 30px;">
+                  <div class="popular__bottom-price recommendation__bottom-price">
+                    $100.00/ <span>day</span>
+                  </div>
+                  <form action="" method="POST" class="form__cars">{% csrf_token %}
+                    {% if not is_authorized%}
+                    <a href="{% url 'login' %}" class="popular__bottom-button">
+                      Rent Now
+                    </a>
+                    {% else %}
+                    <button type='submit' name='{{car_tuple.0.CarModel}}' class="popular__bottom-button">
+                      Rent Now
+                    </button> 
+                    {% endif %}
+                  </form>
+                </div>
+                
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__inner-info">
+          <div class="footer__inner-info--title">
+            <a href="#" class="header__content-logo--link footer__content-logo--link">
+              <span class="footer__1 footer__log"> M </span><span class="footer__2 footer__log"> O </span><span class="footer__3 footer__log"> R </span><span class="footer__4 footer__log"> E </span><span class="footer__5 footer__log"> N </span><span class="footer__6 footer__log"> T </span>
+            </a>
+          </div>
+          <div class="footer__inner-info--text">
+            Our vision is to provide convenience and help increase your sales business.
+          </div>
+        </div>
+        <div class="footer__inner-item">
+          <div class="footer__inner-item--title">
+            About
+          </div>
+          <ul class="footer__inner-list">
+            <div class="footer__inner-list--left">
+              <li class="footer__list-item">
+                <a href="#" class="footer__inner-item--link">
+                  How it works
+                </a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__inner-item--link">
+                  Featured
+                </a>
+              </li>
+            </div>
+            <div class="footer__inner-list--right">
+              <li class="footer__list-item">
+                <a href="#" class="footer__inner-item--link">
+                  Partnership
+                </a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__inner-item--link">
+                  Business Relation
+                </a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/main.min.js' %}"></script>
+  <script src="https://kit.fontawesome.com/669671818b.js" crossorigin="anonymous"></script>
+</body>
+</html>

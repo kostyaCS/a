@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morent</title>
+  <link rel="icon" href="{% static 'img/Logo.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://kit.fontawesome.com/669671818b.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 100px 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .popup p {
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 40px;
+        text-align: center;
+        width: 600px;
+        margin-bottom: 50px;
+    }
+    .popup-close {
+        position: absolute;
+        border: 2px solid blue;
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: transparent;
+        transition: all .5s;
+        font-weight: 900;
+    }
+    .popup-close:hover {
+        background-color: blue;
+        color: white;
+    }
+    .popup-close-1 {
+        position: absolute;
+        /* transform: translate(-50%, -50%); */
+        border: 2px solid blue;
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: transparent;
+        transition: all .5s;
+        font-weight: 900;
+        right: 400px;
+    }
+    .popup-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .popup-button:focus {
+        outline: none;
+    }
+    .forma {
+        margin-left: 100px;
+        width: 300px;
+        height: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="transition-fade" id="swup">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__content-logo animate__animated animate__fadeInDownBig animate__fast" style="display: block; margin: 0 auto; text-align: center; padding-top: 60px;">
+                    <a href="{% url 'main' %}" class="header__content-logo--link">
+                        MORENT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main__content">
+        <section class="body">
+            <div class="container">
+                <div class="body__inner">
+                    <div class="body__left">
+                        <form style="width: 100%;" method="POST"> 
+                            <div class="body__left-billing">
+                                <div class="body__left-billing--info">
+                                    <div class="body__left-billing--info---text">
+                                        <div class="body__left-billing--info---title">
+                                            Billing Info
+                                        </div>
+                                        <div class="body__left-billing--info---text">
+                                            Please enter your billing info
+                                        </div>
+                                    </div>
+                                    <div class="body__left-billing--info---steps">
+                                        Step 1 of 4
+                                    </div>
+                                </div>
+                                <ul class="body__left-billing--items">
+                                    <li class="body__left-billing--item">
+                                        <div class="body__left-billing--name---title body__left-billing--item---title">
+                                            Name
+                                        </div>
+                                        <input name="username" placeholder="Your name" type="text" class="body__left-billing--name---input body__left-billing--item---input">
+                                    </li>
+                                    <li>
+                                        <div class="body__left-billing--phone---title body__left-billing--item---title">
+                                            Phone Number
+                                        </div>
+                                        <input placeholder="Phone number" type="text" class="body__left-billing--name---input body__left-billing--item---input">
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                        <form style="width: 100%;" method="POST"> {% csrf_token %}
+                            <div class="body__left-billing body__left-rental">
+                                <div class="body__left-billing--info body__left-rental--info">
+                                    <div class="body__left-billing--info---text body__left-rental--info---text">
+                                        <div class="body__left-billing--info---title body__left-rental--info---title">
+                                            Rental Info
+                                        </div>
+                                        <div class="body__left-billing--info---text body__left-rental--info---text">
+                                            Please select your rental date
+                                        </div>
+                                    </div>
+                                    <div class="body__left-billing--info---steps body__left-rental--info---steps">
+                                        Step 2 of 4
+                                    </div>
+                                </div>
+                                <ul class="body__left-rental--items">
+                                    <li class="body__left-rental--item">
+                                        <div class="body__left-rental--item--top">
+                                            <input name="Radio1" id="Radio1" type="radio" class="body__left-rental--top---input">
+                                            <p class="body__left-rental--top---title">
+                                                Pick-Up
+                                            </p>
+                                        </div>
+                                        <ul class="body__left-rental--item---list">
+                                            <li class="body__left-rental--item---preloader">
+                                                <div class="body__left-rental--preloader---title">
+                                                    Date
+                                                </div>
+                                                <input placeholder="Select your date" type="date" class="body__left-rental--preloader---input">
+                                            </li>
+                                            <li class="body__left-rental--item---preloader">
+                                                <div class="body__left-rental--preloader---title">
+                                                    Time
+                                                </div>
+                                                <input placeholder="Select your time" type="time" class="body__left-rental--preloader---input">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="body__left-rental--item">
+                                        <div class="body__left-rental--item--top">
+                                            <input name="Radio1" id="Radio1" type="radio" class="body__left-rental--top---input">
+                                            <p class="body__left-rental--top---title">
+                                                Drop - Off
+                                            </p>
+                                        </div>
+                                        <ul class="body__left-rental--item---list">
+                                            <li class="body__left-rental--item---preloader">
+                                                <div class="body__left-rental--preloader---title">
+                                                    Date
+                                                </div>
+                                                <input placeholder="Select your date" type="date" class="body__left-rental--preloader---input">
+                                            </li>
+                                            <li class="body__left-rental--item---preloader">
+                                                <div class="body__left-rental--preloader---title">
+                                                    Time
+                                                </div>
+                                                <input placeholder="Select your time" type="time" class="body__left-rental--preloader---input">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                        <div class="body__left-billing body__left-rental">
+                            <div class="body__left-billing--info body__left-rental--info">
+                                <div class="body__left-billing--info---text body__left-rental--info---text">
+                                    <div class="body__left-billing--info---title body__left-rental--info---title">
+                                        Payment Method
+                                    </div>
+                                    <div class="body__left-billing--info---text body__left-rental--info---text">
+                                        Please enter your payment method
+                                    </div>
+                                </div>
+                                <div class="body__left-billing--info---steps body__left-rental--info---steps">
+                                    Step 3 of 4
+                                </div>
+                            </div>
+                            <div class="body__left-credit">
+                                <div class="body__left-credit--info">
+                                    <div class="body__left-credit--info---left">
+                                        <!-- <input type="checkbox" class="body__left-credit--info---left----input"> -->
+                                        <p class="body__left-credit--info---left----title">
+                                            Credit Card
+                                        </p>
+                                    </div>
+                                    <img src="{% static 'img/cabinet/01.png' %}" alt="images" class="body__left-credit--info---left">
+                                </div>
+                                <ul class="body__left-credit--items">
+                                    <li class="body__left-credit--item">
+                                        <p class="body__left-credit--item---title">
+                                            Card Number
+                                        </p>
+                                        <input type="text" placeholder="Card number" class="body__left-credit--item---input">
+                                    </li>
+                                    <li class="body__left-credit--item">
+                                        <p class="body__left-credit--item---title">
+                                            Expration Date
+                                        </p>
+                                        <input type="text" placeholder="DD / MM / YY" class="body__left-credit--item---input">
+                                    </li>
+                                    <li class="body__left-credit--item">
+                                        <p class="body__left-credit--item---title">
+                                            Card Holder
+                                        </p>
+                                        <input type="text" placeholder="Card holder" class="body__left-credit--item---input">
+                                    </li>
+                                    <li class="body__left-credit--item">
+                                        <p class="body__left-credit--item---title">
+                                            CVC
+                                        </p>
+                                        <input type="text" placeholder="CVC" class="body__left-credit--item---input">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body__left-pay">
+                                <div class="body__left-pay--item">
+                                    <div class="body__left-pay--left">
+                                        <!-- <input type="checkbox" class="body__left-pay--left---input"> -->
+                                        <p class="body__left-pay--left---title">
+                                            PayPal (Comming soon)
+                                        </p>
+                                    </div>
+                                    <img src="{% static 'img/cabinet/Group%20427320639.png' %}" alt="images" class="body__left-pay--left---images">
+                                </div>
+                                <div class="body__left-pay--item">
+                                    <div class="body__left-pay--left">
+                                        <!-- <input type="checkbox" class="body__left-pay--left---input"> -->
+                                        <p class="body__left-pay--left---title">
+                                            Bitcoin (Comming soon)
+                                        </p>
+                                    </div>
+                                    <img src="{% static 'img/cabinet/Group%20427320640.png' %}" alt="images" class="body__left-pay--left---images">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body__left-confirmation body__left-billing">
+                            <div class="body__left-billing--info body__left-rental--info">
+                                <div class="body__left-billing--info---text body__left-rental--info---text">
+                                    <div class="body__left-billing--info---title body__left-rental--info---title">
+                                        Confirmation
+                                    </div>
+                                    <div class="body__left-billing--info---text body__left-rental--info---text">
+                                        We are getting to the end. Just few clicks and your rental is ready!
+                                    </div>
+                                </div>
+                                <div class="body__left-billing--info---steps body__left-rental--info---steps">
+                                    Step 4 of 4
+                                </div>
+                            </div>
+                            <div class="body__left-confirmation--items">
+                                <div class="body__left-confirmation--item">
+                                    <input type="checkbox" class="body__left-confirmation--item---input">
+                                    <div class="body__left-confirmation--item---text">
+                                        I agree with sending an Marketing and newsletter emails. No spam, promissed!
+                                    </div>
+                                </div>
+                                <div class="body__left-confirmation--item">
+                                    <input type="checkbox" class="body__left-confirmation--item---input">
+                                    <div class="body__left-confirmation--item---text">
+                                        I agree with our terms and conditions and privacy policy.
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="popup-button" style="margin-bottom: 20px">Rent a car!</button>
+                            <div class="popup-overlay">
+                                <div class="popup">
+                                    <p>
+                                        You definitely want to rent this car?
+                                    </p>
+                                    <div class="popup-forma">
+                                        <form class="forma" method="POST">{% csrf_token %}
+                                            <button type='submit' name='submit' class="popup-close">
+                                                RENT NOW
+                                            </button>
+                                        </form>
+                                        <button class="popup-close popup-close-1">
+                                            NO, THANK YOU
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body__left-confirmation--bottom">
+                                <img src="{% static 'img/cabinet/02.png' %}" alt="images" class="body__left-confirmation--bottom---img">
+                                <div class="body__left-confirmation--bottom---title">
+                                    All your data are safe
+                                </div>
+                                <div class="body__left-confirmation--bottom---text">
+                                    We are using the most advanced security to provide you the best experience ever.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body__right">
+                        <div class="body__right-item">
+                            <div class="body__right-item--title">
+                                Rental Summary
+                            </div>
+                            <div class="body__right-item--text">
+                                Prices may change depending on the length of the rental and the price of your rental car.
+                            </div>
+                            <div class="body__right-item--center">
+                                <div class="body__right-item--center---content">
+                                    <div class="body__right-item--center---title">
+                                        {{car.CarModel}}
+                                    </div>
+                                    <div class="body__right-item--center---values">
+                                        <div class="body__right-item--center---values----stars" style="padding: 50px; border: 2px solid grey; border-radius: 15px;">
+                                            <img src="{{car.Photo.url}}" width="260px" height="100px" alt="images" class="body__right-item--center---values----stars-----images">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body__right-item--subtotal">
+                                <div class="body__right-item--subtotal---title">
+                                    Subtotal
+                                </div>
+                                <div class="body__right-item--subtotal---price">
+                                    $100.00 
+                                </div>
+                            </div>
+                            <div class="body__right-item--tax">
+                                <div class="body__right-item--subtotal---title">
+                                    Tax
+                                </div>
+                                <div class="body__right-item--subtotal---price">
+                                    $0
+                                </div>
+                            </div>
+                            <div class="body__right-item--apply">
+                                <input placeholder="Apply promo code" type="text" class="body__right-item--apply---input">
+                            </div>
+                            <div class="body__right-item--bottom">
+                                <div class="body__right-item--bottom---content">
+                                    <div class="body__right-item--bottom---content----title">
+                                        Total Rental Price
+                                    </div>
+                                    <div class="body__right-item--bottom---content----text">
+                                        Overall price and includes rental discount
+                                    </div>
+                                </div>
+                                <div class="body__right-item--bottom---finalprice">
+                                    $100.00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__inner-info">
+                    <div class="footer__inner-info--title">
+                        <a href="#" class="header__content-logo--link footer__content-logo--link">
+                            <span class="footer__1 footer__log"> M </span><span class="footer__2 footer__log"> O </span><span class="footer__3 footer__log"> R </span><span class="footer__4 footer__log"> E </span><span class="footer__5 footer__log"> N </span><span class="footer__6 footer__log"> T </span>
+                        </a>
+                    </div>
+                    <div class="footer__inner-info--text">
+                        Our vision is to provide convenience and help increase your sales business.
+                    </div>
+                </div>
+                <div class="footer__inner-item">
+                    <div class="footer__inner-item--title">
+                        About
+                    </div>
+                    <ul class="footer__inner-list">
+                        <div class="footer__inner-list--left">
+                            <li class="footer__list-item">
+                                <a href="#" class="footer__inner-item--link">
+                                    How it works
+                                </a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="#" class="footer__inner-item--link">
+                                    Featured
+                                </a>
+                            </li>
+                        </div>
+                        <div class="footer__inner-list--right">
+                            <li class="footer__list-item">
+                                <a href="#" class="footer__inner-item--link">
+                                    Partnership
+                                </a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="#" class="footer__inner-item--link">
+                                    Business Relation
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </main>
+
+  <script>
+      const popupButton = document.querySelector('.popup-button');
+      const popupOverlay = document.querySelector('.popup-overlay');
+      const popupClose = document.querySelector('.popup-close');
+      const popupClose1 = document.querySelector('.popup-close-1');
+      popupButton.addEventListener('click', () => {
+          popupOverlay.style.display = 'block';
+      });
+      popupClose.addEventListener('click', () => {
+          popupOverlay.style.display = 'none';
+      });
+      popupClose1.addEventListener('click', () => {
+          popupOverlay.style.display = 'none';
+      });
+      function PopUp(){
+          document.getElementById('popup-overlay').style.display="none";
+      }
+  </script>
+
+  <script src="js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/669671818b.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+@font-face {
+    font-family: PlusJakartaSans;
+    src: url(./fonts/PlusJakartaSans-Regular.ttf);
+}
+
+body{
+    background-color: #F6F7F9;
+}
+
+.login-form{
+    width: 508px;
+    height: 407px;
+    background-color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    font-family: PlusJakartaSans;
+    letter-spacing: -2%;
+}
+
+.header{
+    width: 144px;
+    height: 44px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #3563E9;
+    margin: auto;
+    margin-top: 62px;
+}
+
+.input_block{
+    width: 338px;
+    height: 69px;
+    margin: auto;
+}
+
+.input_name{
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 18px;
+    color: #1A202C;
+}
+
+.input_area{
+    width: 100%;
+    height: 43px;
+    margin-top: 6px;
+    border: 1px solid #1A202C;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.input_area_img{
+    width: 25px;
+    height: 25px;
+    margin-left: 13px;
+}
+
+input{
+    margin-left: 13px;
+    height: 95%;
+    width: 100%;
+    border: none;
+    background-color: #F6F7F9;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: #1A202C;
+    text-indent: 12px;
+}
+
+.warning{
+    visibility: visible;
+    color: #881600;
+    font-family: PlusJakartaSans;
+    font-weight: bold;
+    font-size: 10px;
+    margin-left: 18px;
+}
+
+.mt29{
+    margin-top: 29px;
+}
+
+.mt15{
+    margin-top: 15px;
+}
+
+.register-button-container{
+    width: 141px;
+    height: 38px;
+    margin: auto;
+}
+
+.register-button{
+    width: 141px;
+    height: 38px;
+    line-height: 38px;
+    color: #FFFFFF;
+    background-color: #3563E9;
+    font-weight: bold;
+    font-family: PlusJakartaSans;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+}
+
+.register-button:hover{
+    background-color: #FFFFFF;
+    color: #3563E9;
+    cursor: pointer;
+    transition: all .5s;
+    user-select: none;
+}
+
+.underbutton_text{
+    width: 149px;
+    height: 16px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.text1{
+    float: left;
+    color: #1A202C;
+    opacity: 0.5;
+    font-weight: bold;
+    font-family: PlusJakartaSans;
+    font-size: 12px;
+}
+
+.text2{
+    float: right;
+    color: #3563E9;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: PlusJakartaSans;
+    font-size: 12px;
+    user-select: none;
+}
+
+.text2:hover{
+    cursor: pointer;
+}
+
+.undertext_text{
+    width: 139px;
+    height: 16px;
+    margin: auto;
+    margin-top: 0px;
+}

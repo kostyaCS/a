@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'logregapp/css/register_style.css' %}">
+    <title>Register</title>
+    <link rel="icon" href="{% static 'img/Logo.svg' %}">
+</head>
+<body>
+    <form class="login-form" method="POST"> {% csrf_token %}
+        <div class="text header">MORENT</div>
+        <div class="input_block mt15">
+            <div class="text input_name">Username</div>
+            <div class="input_area" id="mail_area">
+                <img src="{% static 'logregapp/img/user_black.svg' %}" alt="mail" class="input_area_img">
+                <input id="mail_input" class="input" type="text" placeholder="ex. danya2456" name="username" value="{{username}}">
+            </div>
+            <div class="warning" id="mail_warning">
+                {% if un_warning %}
+                    {{un_warning}}
+                {% endif %}
+            </div>
+        </div>
+        <div class="input_block mt15">
+            <div class="text input_name">Email</div>
+            <div class="input_area" id="mail_area">
+                <img src="{% static 'logregapp/img/mail_black.svg' %}" alt="mail" class="input_area_img">
+                <input id="mail_input" class="input" type="text" placeholder="name@domain.com" name="mail">
+            </div>
+            <div class="warning" id="mail_warning">
+                {% if e_warning %}
+                    {{e_warning}}
+                {% endif %}
+            </div>
+        </div>
+        <div class="input_block mt15">
+            <div class="text input_name">Password</div>
+            <div class="input_area" id="lock_area">
+                <img src="{% static 'logregapp/img/lock_black.svg' %}" alt="mail" class="input_area_img" id="lock_img">
+                <input id="password_input" class="input" type="password" placeholder="*************" name="password">
+            </div>
+            <div class="warning" id="lock_warning">
+                {% if p_warning %}
+                    {{p_warning}}
+                {% endif %}
+            </div>
+        </div>
+        <div class="input_block mt15">
+            <div class="text input_name">Confirm Password</div>
+            <div class="input_area">
+                <img src="{% static 'logregapp/img/lock_black.svg' %}" alt="mail" class="input_area_img">
+                <input id="confirm_password_input" class="input" type="password" placeholder="*************" name="confirm_password">
+            </div>
+        </div>
+        <div class="register-button-container">
+            <button class="register-button" type="submit">Register</button>
+        </div>
+        <div class="underbutton_text">
+            <div class="text1">Have already registered?</div>
+            <div class="text2"><a href="{% url 'login' %}">Log in</a></div>
+        </div>
+        <div class="undertext_text">
+            <div class="text1">Don't want to register?</div>
+            <div class="text2"><a href="{% url 'main' %}">Home</a></div>
+        </div>
+    </form>
+</body>
+</html>

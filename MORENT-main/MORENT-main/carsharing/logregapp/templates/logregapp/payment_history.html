@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="icon" href="{% static 'img/Logo.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/669671818b.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .main {
+            max-width: 300px;
+            background-color: #fff;
+            height: 100%;
+            min-height: 77vh;
+            display: flex;
+            gap: 100px;
+        }
+        .main__inner {
+            padding: 36px;
+        }
+        .main__inner-left {
+        }
+        .main__left-content {
+            margin-bottom: 60px;
+        }
+        .main__left-content-title {
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 2px;
+            color: rgba(148, 167, 203, 0.4);
+        }
+        .main__left-content--list {
+            margin-top: 40px;
+        }
+        .main__left-content--form {
+            max-width: 200px;
+        }
+        .main__left-list--item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 10px 5px;
+            transition: all .5s;
+            border-radius: 10px;
+        }
+        .main__left-list--item:hover {
+            background-color: #3b3bc4;
+            padding: 10px 5px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .main__left-list--item---text {
+            letter-spacing: 3px;
+            line-height: 24px;
+            font-size: 14px;
+            color: #90A3BF;
+        }
+        .main__left-list--item---text:hover {
+            background-color: #3b3bc4;
+        }
+        .main__left-preferences--title {
+            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 2px;
+            color: rgba(148, 167, 203, 0.4);
+        }
+        .main__left-bottom {
+            transition: all .5s;
+            padding: 10px 5px;
+            border-radius: 10px;
+            max-width: 200px;
+        }
+        .main__left-bottom:hover {
+            background-color: #3b3bc4;
+            padding: 10px 5px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .main__left-bottom--text {
+            letter-spacing: 3px;
+            line-height: 24px;
+            font-size: 14px;
+            color: #90A3BF;
+        }
+        .main__left-bottom--form {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .recent__inner-title {
+            padding-top: 50px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            letter-spacing: 3px;
+            font-size: 20px;
+            line-height: 38px;
+            padding-bottom: 20px;
+        }
+        .recent__inner {
+            background-color: #fff;
+            margin-top: 60px;
+            padding: 20px 50px;
+        }
+        .recent__item-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 550px;
+        }
+        .recent__inner-item {
+            margin-top: 50px;
+        }
+        .recent__inner-item--left---info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .recent__inner-item--left---info----name {
+            width: 120px;
+            line-height: 24px;
+            font-size: 16px;
+            color: #1A202C;
+            font-weight: 900;
+        }
+        .recent__inner-item--left---info----description {
+            color: #90A3BF;
+            line-height: 15px;
+            font-size: 12px;
+        }
+        .recent__inner-item-left--date {
+            color: #90A3BF;
+            line-height: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .recent__inner-item-left--money {
+            color: #1A202C;
+            line-height: 24px;
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        .hover-white:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" style="margin: 0;">
+        <div class="container">
+            <div class="header__inner-position">
+                <div class="header__inner">
+                    <div class="header__inner-content" style="padding: 70px 0;">
+                        <div class="header__content-logo animate__animated animate__fadeInDownBig animate__delay-1s animate__fast">
+                            <a href="{% url 'main' %}" class="header__content-logo--link">
+                                M O R E N T
+                            </a>
+                        </div>
+                        <form action="" method="GET, POST" style="width: auto;">
+                            <button class="header__cabinet-link" style="background-color: transparent; border: none;">
+                                <img src="{% static 'img/profile/01.svg'%}" alt="images" class="header__cabinet-link--images">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="recent main">
+        <div class="main__inner">
+            <div class="main__inner-left">
+                <div class="main__left-content">
+                    <div class="main__left-content-title">
+                        M A I N  M E N U
+                    </div>
+                    <ul class="main__left-content--list">
+                        <form action="" method="GET, POST" class="main__left-content--form">
+                            <li class="main__left-list--item">
+                                <div class="main__left-list--item---img">
+                                    <img src="{% static 'img/profile/02.svg' %}" alt="images" class="main__left-list--item---images">
+                                </div>
+                                <button class="main__left-list--item---text" style="background-color: transparent; border: none;">
+                                    Dashboard
+                                </button>
+                            </li>
+                        </form>
+                        <form action="" method="POST" class="main__left-content--form">{% csrf_token %}
+                            <li class="main__left-list--item">
+                                <div class="main__left-list--item---img">
+                                    <img src="{% static 'img/profile/04.svg' %}" alt="images" class="main__left-list--item---images">
+                                </div>
+                                <button type='submit' name="payment" class="main__left-list--item---text" style="background-color: transparent; border: none;">
+                                    Payment history
+                                </button>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+                <div class="main__left-preferences">
+                    <div class="main__left-preferences--title">
+                        P R E F E R E N C E S
+                    </div>
+                    <ul class="main__left-preferences--list">
+                        <form action="" method="GET, POST" class="main__left-content--form">
+                            <li class="main__left-list--item">
+                                <div class="main__left-list--item---img">
+                                    <img src="{% static 'img/profile/05.svg' %}" alt="images" class="main__left-list--item---images">
+                                </div>
+                                <button class="main__left-list--item---text" style="background-color: transparent; border: none;">
+                                    Help & Center
+                                </button>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+                <div class="main__left-bottom">
+                    <form action="" method="GET, POST" class="main__left-bottom--form">{% csrf_token %}
+                        <div class="main__left-bottom--img">
+                            <img src="{% static 'img/profile/06.svg' %}" alt="images" class="main__left-bottom--images">
+                        </div>
+                        <button type="submit" name='logout' class="main__left-bottom--text" style="background-color: transparent; border: none;">
+                            Log Out
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="recent__inner">
+            <div class="recent__inner-content">
+                <div class="recent__inner-title">
+                    Recent Transactions
+                </div>
+                {% for car in cars %}
+                <div class="recent__inner-item">
+                    <div class="recent__item-left">
+                        <div class="recent__inner-item--left---info">
+                            <div class="recent__inner-left--info--img">
+                                <img alt="images" src="{{car.car.Photo.url}}" width="200px" height="100px" class="recent__inner-left--info--images"></img>
+                            </div>
+                            <div class="recent__inner-item--left---info----description">
+                                <div class="recent__inner-item--left---info----name">
+                                    {{car.car.CarModel}}
+                                </div>
+                                <div class="recent__inner-item--left---info----sub">
+                                    {{car.car.BodyType}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent__inner-item-left--price">
+                            <div class="recent__inner-item-left--date">
+                                20 July
+                            </div>
+                            <div class="recent__inner-item-left--money">
+                                $100.00
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="{% static 'js/main.min.js' %}"></script>
+<script src="https://kit.fontawesome.com/669671818b.js" crossorigin="anonymous"></script>
+</body>
+</html>

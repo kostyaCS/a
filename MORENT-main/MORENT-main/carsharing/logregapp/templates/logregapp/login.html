@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'logregapp/css/login_style.css' %}">
+    <title>Login</title>
+    <link rel="icon" href="{% static 'img/Logo.svg' %}">
+</head>
+<body>
+    <form class="login-form" method="POST">{% csrf_token %}
+        <div class="text header">MORENT</div>
+        <div class="input_block mt15">
+            <div class="text input_name">Username</div>
+            <div class="input_area" id="mail_area">
+                <img src="{% static 'logregapp/img/user_black.svg' %}" alt="mail" class="input_area_img">
+                <input id="mail_input" class="input" type="text" placeholder="ex. danya2456" name="username">
+            </div>
+            <div class="warning" id="mail_warning">
+                {{warning}}
+            </div>
+        </div>
+        <div class="input_block mt15">
+            <div class="text input_name">Password</div>
+            <div class="input_area" id="lock_area">
+                <img src="{% static 'logregapp/img/lock_black.svg' %}" alt="mail" class="input_area_img" id="lock_img">
+                <input id="password_input" class="input" type="password" placeholder="*************" name="password">
+            </div>
+            <div class="warning" id="lock_warning"></div>
+        </div>
+        <div class="register-button-container">
+            <button class="register-button" onclick="check_input()">Log in</button>
+        </div>
+        <div class="underbutton_text">
+            <div class="text1">New in MORENT?</div>
+            <div class="text2"><a href="{% url 'register' %}">Register</a></div>
+        </div>
+        <div class="undertext_text">
+            <div class="text1"><a></a>Don't want to login?</a></div>
+            <div class="text2"><a href="{% url 'main' %}">Home</a></div>
+        </div>
+    </form>
+</body>
+</html>
